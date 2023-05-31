@@ -36,6 +36,7 @@ class DbWorker:
             self.cursor = self.connection.cursor()
         except (Exception, Error):
             print("Connection Error", Error)
+        print("Подключение успешно")
 
     def createTableDB(self) -> None:
         """
@@ -49,6 +50,7 @@ class DbWorker:
                                             {self._table_column3} varchar(200) 
                                                                             );"""
                                 )
+            print("Создание таблицы выполнил")
         except (Exception, Error):
             print("Connection Error", Error)
         finally:
@@ -70,6 +72,7 @@ class DbWorker:
 
             self.cursor.execute(query)
             self.record = self.cursor.fetchone()
+            print("Прочитали таблицу", self.record)
         except(Exception, Error):
             print("Query error", Error)
 
@@ -81,7 +84,7 @@ class DbWorker:
         """
         try:
             self.cursor.execute(f"""DELETE FROM public.requests 
-                                    WHERE date='{signal[f"{self._table_column2}"]}'
+                                    WHERE date='{signal[self._table_column2]}'
                             ;""")
         except(Exception, Error):
             print("Query error", Error)
@@ -102,12 +105,13 @@ class DbWorker:
                                             {self._table_column3}
                                                                )
                                             values(
-                                            f'{signal[f"{self._table_column1}"]}',
-                                            '{signal[f"{self._table_column2}"]}',
-                                            '{signal[f"{self._table_column3}"]}'
+                                            '{signal[self._table_column1]}',
+                                            '{signal[self._table_column2]}',
+                                            '{signal[self._table_column3]}'
                                                     )
                             ;""")
-        except (Exception, Error):
+            print("Добавили в таблицу")
+        except(Exception, Error):
             print("Connection Error", Error)
         finally:
             if self.cursor:

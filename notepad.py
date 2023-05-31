@@ -8,7 +8,7 @@ if __name__ == '__main__':
     app = QtWidgets.QApplication()
 
     win = MainWindow()
-    with open("ui/themes/MumbleLiteTheme.qss", "r") as fh:
+    with open("ui/themes/DarkStyleTheme.qss", "r") as fh:
         win.setStyleSheet(fh.read())
 
     loading_window = QtGui.QPixmap('ui/themes/loading.gif')
