@@ -8,7 +8,10 @@ from PySide6 import QtWidgets, QtGui, QtCore
 from ui.widgets.calendar import Calendar
 from ui.widgets.child_window import ChildWindow
 
-
+"""
+Здесь будут мои комментарии
+Еще один комментарий
+"""
 
 class MainWindow(QtWidgets.QWidget):
     """
