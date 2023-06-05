@@ -8,12 +8,6 @@ class DbWorker:
         self.cursor = None
         self.record = None
 
-        # self._db_name = "postgres" 'dbSQL'
-        # self._user_name = "postgres" 'pguser'
-        # self._password = "victory" 'Pa$$w0rd'
-        # self._host_name = "localhost" 'vpngw.avalon.ru'
-        # self._port_name = "5432"
-
         self._db_name = 'dbSQL'
         self._user_name = 'pguser'
         self._password = 'Pa$$w0rd'
