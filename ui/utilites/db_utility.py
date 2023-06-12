@@ -8,10 +8,10 @@ class DbWorker:
         self.cursor = None
         self.record = None
 
-        self._db_name = 'dbSQL'
-        self._user_name = 'pguser'
-        self._password = 'Pa$$w0rd'
-        self._host_name = 'vpngw.avalon.ru'
+        self._db_name = 'postgres'
+        self._user_name = 'postgres'
+        self._password = 'victory'
+        self._host_name = 'localhost'
         self._port_name = "5432"
 
         self._table_column1 = "name_note"
